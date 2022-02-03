@@ -1,0 +1,30 @@
+--------------------------------- unknown -------------------------------------------------------------------------------------------------
+let unkValue: unknown = "Franco";       //El unknow no nos va a dejar hacer todo porque no se el valor exactamente cual es. Le puedo asignar valores.
+unkValue.method();      //Error: no lo permite --> Te tira un error, cuando exista la posibilidad de un error en runtime.
+
+let2: string = unkValue;    //error: el tipo 'desconocido' no se puede asignar al tipo 'cadena'.
+let3: string = unkValue as string;     //elenco explícito  ---> Es como decir: "Te estoy jurando que es STRING".
+
+------------------------------------ any (mala práctica, perdemos la seguridad que nos está dando typescript) ------------------------------------------------------------------------------------------------------
+
+let anyValue: any = "Franco";   //Te deshbailita todos los chequeos de typescript, se trata como si fuera js solo para esa variable.
+
+let1: string = anyValue;    //Todo ok, puedo asignarlo
+let2: string = anyValue;    //error: el tipo 'desconocido' no se puede asignar al tipo 'cadena'.
+let3: string = anyValue;    //elenco explícito
+
+unkValue.method();      //Error: no lo permite
+
+------------------------------------- noImplicitAny --------------------------------------------------------------------------------------------
+function noImplicitType(firstArg: string, secondArg: string){
+    console.log(first Argument: ", firstArg);
+    console.log(first Argument: ", firstArg);
+}
+
+noImplicitType(1, 2);                   //como tiene que ser string y lo que estoy pasando son números, no me lo toma y da error
+noImplicitTypes("Franco", "Etcheverri");
+noImplicitType(true, null);
+
+
+
+
